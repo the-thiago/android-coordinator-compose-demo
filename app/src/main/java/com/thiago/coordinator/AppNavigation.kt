@@ -1,26 +1,23 @@
 package com.thiago.coordinator
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.thiago.coordinator.features.first.FirstScreen
-import com.thiago.coordinator.features.second.SecondScreen
+import com.thiago.coordinator.features.auth.createpassword.CreatePasswordScreen
+import com.thiago.coordinator.features.auth.signup.SignupScreen
 
 @Composable
-internal fun AppNavigation() {
-    val navController = rememberNavController()
+internal fun AppNavigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = "first"
+        startDestination = "createPassword"
     ) {
-        composable("first") {
-            FirstScreen {
-                navController.navigate("second")
-            }
+        composable("createPassword") {
+            CreatePasswordScreen()
         }
-        composable("second") {
-            SecondScreen()
+        composable("signup") {
+            SignupScreen()
         }
     }
 }

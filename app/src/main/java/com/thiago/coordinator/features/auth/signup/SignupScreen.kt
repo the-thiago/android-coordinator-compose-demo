@@ -1,4 +1,4 @@
-package com.thiago.coordinator.features.first
+package com.thiago.coordinator.features.auth.signup
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,19 +8,19 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-internal fun FirstScreen(
-    viewModel: FirstViewModel = FirstViewModel(),
-    onClick: () -> Unit
+internal fun SignupScreen(
+    viewModel: SignupViewModel = hiltViewModel()
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        Button(onClick = onClick) {
-            Text(text = "First Screen")
+        Button(onClick = { viewModel.navigate() }) {
+            Text(text = "SignupScreen")
         }
     }
 }
