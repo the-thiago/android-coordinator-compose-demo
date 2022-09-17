@@ -1,8 +1,8 @@
-package com.thiago.coordinator.features.auth.signup
+package com.thiago.auth.signup
 
 import androidx.lifecycle.ViewModel
-import com.thiago.coordinator.navigation.flow.AuthCoordinator
-import com.thiago.coordinator.navigation.flow.Auth
+import com.thiago.navigation.AuthCoordinator
+import com.thiago.navigation.AuthCoordinatorEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -12,6 +12,6 @@ class SignupViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun navigate() {
-        authCoordinator.onEvent(currentScreen = Auth.Signup)
+        authCoordinator.onEvent(event = AuthCoordinatorEvent.CreatePassword)
     }
 }

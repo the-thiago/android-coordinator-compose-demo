@@ -1,4 +1,4 @@
-package com.thiago.coordinator.navigation
+package com.thiago.navigation
 
 import androidx.navigation.NavOptions
 import androidx.navigation.NavOptionsBuilder

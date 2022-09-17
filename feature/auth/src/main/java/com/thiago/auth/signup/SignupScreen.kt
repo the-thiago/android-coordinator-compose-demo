@@ -1,4 +1,4 @@
-package com.thiago.coordinator.features.auth.signup
+package com.thiago.auth.signup
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-internal fun SignupScreen(
+fun SignupScreen(
     viewModel: SignupViewModel = hiltViewModel()
 ) {
     Column(

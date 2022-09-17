@@ -1,7 +1,7 @@
 package com.thiago.coordinator
 
 import androidx.lifecycle.ViewModel
-import com.thiago.coordinator.navigation.NavigationManager
+import com.thiago.navigation.NavigationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

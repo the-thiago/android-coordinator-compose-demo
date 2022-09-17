@@ -1,8 +1,6 @@
 package com.thiago.coordinator
 
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -13,8 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.thiago.coordinator.navigation.NavigationCommand
-import com.thiago.coordinator.navigation.NavigationType
 import com.thiago.coordinator.ui.theme.CoordinatorTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -49,15 +45,15 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             viewModel.navigationManager.commands.collect { command ->
                 when (command) {
-                    is NavigationCommand.Navigate -> {
+                    is com.thiago.navigation.NavigationCommand.Navigate -> {
                         when (val type = command.type) {
-                            NavigationType.NavigateTo -> {
+                            com.thiago.navigation.NavigationType.NavigateTo -> {
                                 navController.navigate(
                                     route = command.destination,
                                     navOptions = command.navOptions
                                 )
                             }
-                            is NavigationType.PopUpTo -> {
+                            is com.thiago.navigation.NavigationType.PopUpTo -> {
                                 navController.popBackStack(
                                     command.destination,
                                     type.inclusive
@@ -65,9 +61,9 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     }
-                    is NavigationCommand.NavigateUp ->
+                    is com.thiago.navigation.NavigationCommand.NavigateUp ->
                         navController.navigateUp()
-                    is NavigationCommand.PopStackBack ->
+                    is com.thiago.navigation.NavigationCommand.PopStackBack ->
                         navController.popBackStack()
                 }
             }

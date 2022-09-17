@@ -1,4 +1,4 @@
-package com.thiago.coordinator.features.auth.createpassword
+package com.thiago.auth.createemail
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-internal fun CreatePasswordScreen(
-    viewModel: CreatePasswordScreenViewModel = hiltViewModel()
+fun CreateEmailScreen(
+    viewModel: CreateEmailViewModel = hiltViewModel()
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
@@ -20,7 +20,7 @@ internal fun CreatePasswordScreen(
         modifier = Modifier.fillMaxSize()
     ) {
         Button(onClick = { viewModel.navigate() }) {
-            Text(text = "CreatePasswordScreen")
+            Text(text = "CreateEmailScreen")
         }
     }
 }

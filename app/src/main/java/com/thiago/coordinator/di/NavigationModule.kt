@@ -1,7 +1,7 @@
 package com.thiago.coordinator.di
 
-import com.thiago.coordinator.navigation.flow.AuthCoordinator
-import com.thiago.coordinator.navigation.NavigationManager
+import com.thiago.navigation.AuthCoordinator
+import com.thiago.navigation.NavigationManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
