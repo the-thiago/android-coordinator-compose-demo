@@ -15,12 +15,13 @@ fun CreateEmailScreen(
     viewModel: CreateEmailViewModel = hiltViewModel()
 ) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
+        Text(text = "Auth 1: Email Screen")
         Button(onClick = { viewModel.navigate() }) {
-            Text(text = "CreateEmailScreen")
+            Text(text = "Open Password")
         }
     }
 }

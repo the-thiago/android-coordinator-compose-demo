@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.thiago.coordinator.ui.theme.CoordinatorTheme
+import com.thiago.navigation.NavigationCommand
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -45,7 +46,7 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             viewModel.navigationManager.commands.collect { command ->
                 when (command) {
-                    is com.thiago.navigation.NavigationCommand.Navigate -> {
+                    is NavigationCommand.Navigate -> {
                         when (val type = command.type) {
                             com.thiago.navigation.NavigationType.NavigateTo -> {
                                 navController.navigate(
@@ -61,9 +62,9 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     }
-                    is com.thiago.navigation.NavigationCommand.NavigateUp ->
+                    is NavigationCommand.NavigateUp ->
                         navController.navigateUp()
-                    is com.thiago.navigation.NavigationCommand.PopStackBack ->
+                    is NavigationCommand.PopStackBack ->
                         navController.popBackStack()
                 }
             }

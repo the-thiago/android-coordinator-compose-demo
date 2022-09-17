@@ -1,6 +1,7 @@
 package com.thiago.coordinator.di
 
 import com.thiago.navigation.AuthCoordinator
+import com.thiago.navigation.HomeCoordinator
 import com.thiago.navigation.NavigationManager
 import dagger.Module
 import dagger.Provides
@@ -46,5 +47,11 @@ object NavigationModule {
     @Provides
     fun providesAuthCoordinator(navigationManager: NavigationManager): AuthCoordinator {
         return AuthCoordinator(navigationManager)
+    }
+
+    @Singleton
+    @Provides
+    fun providesHomeCoordinator(navigationManager: NavigationManager): HomeCoordinator {
+        return HomeCoordinator(navigationManager)
     }
 }

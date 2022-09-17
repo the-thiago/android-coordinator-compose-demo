@@ -15,12 +15,13 @@ fun CreatePasswordScreen(
     viewModel: CreatePasswordViewModel = hiltViewModel()
 ) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
+        Text(text = "Auth 2: Password Screen")
         Button(onClick = { viewModel.navigate() }) {
-            Text(text = "CreatePasswordScreen")
+            Text(text = "Open Signup")
         }
     }
 }

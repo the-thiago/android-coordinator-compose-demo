@@ -1,4 +1,4 @@
-package com.thiago.auth.signup
+package com.thiago.home.list
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,17 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun SignupScreen(
-    viewModel: SignupViewModel = hiltViewModel()
+fun ListScreen(
+    viewModel: ListViewModel = hiltViewModel()
 ) {
     Column(
         verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Auth 3: Signup Screen")
+        Text(text = "Home: List Screen")
         Button(onClick = { viewModel.navigate() }) {
-            Text(text = "Open List")
+            Text(text = "Open Details")
         }
     }
 }

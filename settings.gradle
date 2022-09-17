@@ -14,5 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Coordinator"
 include ':app'
-include ':feature:auth'
 include ':core:navigation'
+include ':feature:auth'
+include ':feature:home'

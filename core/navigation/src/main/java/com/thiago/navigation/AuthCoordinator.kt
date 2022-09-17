@@ -26,12 +26,3 @@ sealed class AuthCoordinatorEvent : CoordinatorEvent {
     object CreatePassword : AuthCoordinatorEvent()
     object Signup : AuthCoordinatorEvent()
 }
-
-sealed class Screen(val route: String) {
-
-    sealed class Auth(route: String) : Screen(route) {
-        object CreateEmail : Auth(route = "CreateEmail")
-        object CreatePassword : Auth(route = "CreatePassword")
-        object Signup : Auth(route = "Signup")
-    }
-}
